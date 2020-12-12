@@ -9,6 +9,13 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  bool enableButton = false;
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     var screenWidth = MediaQuery.of(context).size.width;
@@ -24,7 +31,9 @@ class _HomePageState extends State<HomePage> {
       child: Scaffold(
         body: SingleChildScrollView(
           child: Container(
-            height: screenHeight,
+            height: MediaQuery.of(context).viewInsets.bottom == 0
+                ? screenHeight
+                : 850.h,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -38,7 +47,9 @@ class _HomePageState extends State<HomePage> {
                   padding: EdgeInsets.all(0),
                 ),
                 SizedBox(
-                  height: 108.16.h,
+                  height: MediaQuery.of(context).viewInsets.bottom == 0
+                      ? 108.16.h
+                      : 50.h,
                 ),
                 Container(
                   margin: EdgeInsets.only(left: 33.28.w),
@@ -59,7 +70,9 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 SizedBox(
-                  height: 100.h,
+                  height: MediaQuery.of(context).viewInsets.bottom == 0
+                      ? 100.h
+                      : 40.h,
                 ),
                 Container(
                   width: screenWidth,
@@ -69,8 +82,22 @@ class _HomePageState extends State<HomePage> {
                       Container(
                           width: 0.9 * screenWidth,
                           child: TextField(
+                            onTap: () {},
+                            onChanged: (value) {
+                              print(value);
+                              if (value.length > 0 && value != "") {
+                                setState(() {
+                                  enableButton = true;
+                                });
+                              } else {
+                                setState(() {
+                                  enableButton = false;
+                                });
+                              }
+                            },
                             cursorColor: black,
                             decoration: InputDecoration(
+                                enabled: true,
                                 prefix: InkWell(
                                   onTap: () {},
                                   child: Container(
@@ -99,20 +126,27 @@ class _HomePageState extends State<HomePage> {
                 //     ),
                 //   )
                 // ]),
-                Expanded(
-                  child: Container(),
-                ),
+                MediaQuery.of(context).viewInsets.bottom == 0
+                    ? Expanded(
+                        child: Container(),
+                      )
+                    : SizedBox(height: 50.h),
                 Align(
                   alignment: Alignment.center,
                   child: Container(
                     width: 0.90 * screenWidth,
                     height: 99.84.h,
+                    decoration:
+                        BoxDecoration(borderRadius: BorderRadius.circular(10)),
                     child: RaisedButton(
-                      color: Color(0xffF7F7F8),
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                      color:
+                          enableButton ? Color(0xff0088D0) : Color(0xffF7F7F8),
                       child: Text(
                         'Get Started',
                         style: TextStyle(
-                            color: Color(0xff7C8990), fontSize: 33.28.sp),
+                            color: enableButton ? white : Color(0xff7C8990),
+                            fontSize: 33.28.sp),
                       ),
                       elevation: 1,
                       onPressed: () {},

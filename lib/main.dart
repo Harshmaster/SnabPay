@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_screenutil/screenutil.dart';
 import 'package:snabbpay/Screens/SplashScreen/splash.dart';
 import 'package:snabbpay/colors.dart';
 
