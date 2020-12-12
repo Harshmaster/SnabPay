@@ -4,7 +4,11 @@ import 'package:snabbpay/Screens/SplashScreen/splash.dart';
 import 'package:snabbpay/colors.dart';
 
 void main() {
-  runApp(MyApp());
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    systemNavigationBarColor: Color(0xff0088D0), // navigation bar color
+    statusBarColor: Color(0xff0088D0),  // status bar color
+  ));
+  runApp(MyApp()); 
 }
 
 class MyApp extends StatelessWidget {

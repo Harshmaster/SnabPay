@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:snabbpay/Screens/HomeScreen/password.dart';
 
 import '../../colors.dart';
 
@@ -24,7 +25,7 @@ class _HomePageState extends State<HomePage> {
     ScreenUtil.init(
       context,
       designSize: Size(750, 1334),
-      allowFontScaling: false,
+      allowFontScaling: true,
     );
 
     return Container(
@@ -82,6 +83,9 @@ class _HomePageState extends State<HomePage> {
                       Container(
                           width: 0.9 * screenWidth,
                           child: TextField(
+                            enabled: true,
+                            style:
+                                TextStyle(fontSize: 30.sp, color: Colors.black),
                             onTap: () {},
                             onChanged: (value) {
                               print(value);
@@ -97,12 +101,19 @@ class _HomePageState extends State<HomePage> {
                             },
                             cursorColor: black,
                             decoration: InputDecoration(
-                                enabled: true,
-                                prefix: InkWell(
+                                prefixIcon: InkWell(
                                   onTap: () {},
                                   child: Container(
-                                      margin: EdgeInsets.only(right: 20.w),
-                                      child: Text('+91')),
+                                      height: 20.h,
+                                      width: 20.w,
+                                      margin: EdgeInsets.only(bottom: 30.w),
+                                      child: Align(
+                                          alignment: Alignment.bottomLeft,
+                                          child: Text(
+                                            '+91',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ))),
                                 ),
                                 hintText: 'Mobile Number',
                                 focusedBorder: UnderlineInputBorder(
@@ -139,7 +150,8 @@ class _HomePageState extends State<HomePage> {
                     decoration:
                         BoxDecoration(borderRadius: BorderRadius.circular(10)),
                     child: RaisedButton(
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10)),
                       color:
                           enableButton ? Color(0xff0088D0) : Color(0xffF7F7F8),
                       child: Text(
@@ -149,7 +161,13 @@ class _HomePageState extends State<HomePage> {
                             fontSize: 33.28.sp),
                       ),
                       elevation: 1,
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (BuildContext context) =>
+                                    PasswordScreen()));
+                      },
                     ),
                   ),
                 ),
