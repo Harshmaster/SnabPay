@@ -71,7 +71,6 @@ class _HomePageState extends State<HomePage> {
                           child: TextField(
                             cursorColor: black,
                             decoration: InputDecoration(
-                                hasFloatingPlaceholder: true,
                                 prefix: InkWell(
                                   onTap: () {},
                                   child: Container(
