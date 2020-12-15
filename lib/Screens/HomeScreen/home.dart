@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:snabbpay/Screens/HomeScreen/password.dart';
-
 import '../../colors.dart';
 
 class HomePage extends StatefulWidget {
@@ -11,6 +10,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   bool enableButton = false;
+  bool isdropdownEnabled = false;
 
   @override
   void initState() {
@@ -34,7 +34,8 @@ class _HomePageState extends State<HomePage> {
           child: Container(
             height: MediaQuery.of(context).viewInsets.bottom == 0
                 ? screenHeight
-                : 850.h,
+                // : 850.h,
+                : screenHeight,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -83,10 +84,13 @@ class _HomePageState extends State<HomePage> {
                       Container(
                           width: 0.9 * screenWidth,
                           child: TextField(
+                            onTap: () {
+                              // isdropdownEnabled = false;
+                            },
+                            keyboardType: TextInputType.number,
                             enabled: true,
                             style:
                                 TextStyle(fontSize: 30.sp, color: Colors.black),
-                            onTap: () {},
                             onChanged: (value) {
                               print(value);
                               if (value.length > 0 && value != "") {
@@ -102,18 +106,40 @@ class _HomePageState extends State<HomePage> {
                             cursorColor: black,
                             decoration: InputDecoration(
                                 prefixIcon: InkWell(
-                                  onTap: () {},
+                                  onTap: () {
+                                    isdropdownEnabled = true;
+                                  },
                                   child: Container(
-                                      height: 20.h,
-                                      width: 20.w,
-                                      margin: EdgeInsets.only(bottom: 30.w),
-                                      child: Align(
-                                          alignment: Alignment.bottomLeft,
-                                          child: Text(
-                                            '+91',
-                                            style:
-                                                TextStyle(color: Colors.black),
-                                          ))),
+                                    // height: 20.h,
+                                    width: 180.w,
+                                    child: Row(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        Container(
+                                            width: 50.h,
+                                            child: Image.asset(
+                                              'assets/greenflag.png',
+                                              fit: BoxFit.contain,
+                                            )),
+                                        Container(
+                                          margin: EdgeInsets.only(left: 20.w),
+                                          child: Align(
+                                            alignment: Alignment.center,
+                                            child: Text(
+                                              '+1',
+                                              style: TextStyle(
+                                                  color: Colors.black),
+                                            ),
+                                          ),
+                                        ),
+                                        Container(
+                                          child: Icon(Icons.arrow_drop_down,
+                                              color: Colors.black),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
                                 ),
                                 hintText: 'Mobile Number',
                                 focusedBorder: UnderlineInputBorder(
@@ -126,17 +152,109 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                 ),
-                // Column(children: [
-                //   Container(
-                //     width: screenWidth,
-                //     child: Row(
-                //       children: [
-                //         Text('Nigeria'),
-                //         Container(child:Image.asset('')),
-                //       ],
-                //     ),
-                //   )
-                // ]),
+                isdropdownEnabled
+                    ? SingleChildScrollView(
+                        child: Container(
+                          height: 400.h,
+                          margin: EdgeInsets.only(top: 70.h, left: 60.w),
+                          child: SingleChildScrollView(
+                            child: Column(children: [
+                              Container(
+                                margin: EdgeInsets.only(bottom: 35.h),
+                                width: screenWidth,
+                                child: Row(
+                                  children: [
+                                    Text('Nigeria',
+                                        style: TextStyle(
+                                            fontSize: 30.sp,
+                                            color: Color(0xff7C8990))),
+                                    Container(child: Image.asset('')),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                margin: EdgeInsets.only(bottom: 35.h),
+                                width: screenWidth,
+                                child: Row(
+                                  children: [
+                                    Text('Canada',
+                                        style: TextStyle(
+                                            fontSize: 30.sp,
+                                            color: Color(0xff7C8990))),
+                                    Container(child: Image.asset('')),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                margin: EdgeInsets.only(bottom: 35.h),
+                                width: screenWidth,
+                                child: Row(
+                                  children: [
+                                    Text('India',
+                                        style: TextStyle(
+                                            fontSize: 30.sp,
+                                            color: Color(0xff7C8990))),
+                                    Container(child: Image.asset('')),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                margin: EdgeInsets.only(bottom: 35.h),
+                                width: screenWidth,
+                                child: Row(
+                                  children: [
+                                    Text('Australia',
+                                        style: TextStyle(
+                                            fontSize: 30.sp,
+                                            color: Color(0xff7C8990))),
+                                    Container(child: Image.asset('')),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                margin: EdgeInsets.only(bottom: 35.h),
+                                width: screenWidth,
+                                child: Row(
+                                  children: [
+                                    Text('United Kingdom',
+                                        style: TextStyle(
+                                            fontSize: 30.sp,
+                                            color: Color(0xff7C8990))),
+                                    Container(child: Image.asset('')),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                margin: EdgeInsets.only(bottom: 35.h),
+                                width: screenWidth,
+                                child: Row(
+                                  children: [
+                                    Text('Brazil',
+                                        style: TextStyle(
+                                            fontSize: 30.sp,
+                                            color: Color(0xff7C8990))),
+                                    Container(child: Image.asset('')),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                margin: EdgeInsets.only(bottom: 35.h),
+                                width: screenWidth,
+                                child: Row(
+                                  children: [
+                                    Text('Ghana',
+                                        style: TextStyle(
+                                            fontSize: 30.sp,
+                                            color: Color(0xff7C8990))),
+                                    Container(child: Image.asset('')),
+                                  ],
+                                ),
+                              ),
+                            ]),
+                          ),
+                        ),
+                      )
+                    : Container(),
                 MediaQuery.of(context).viewInsets.bottom == 0
                     ? Expanded(
                         child: Container(),
