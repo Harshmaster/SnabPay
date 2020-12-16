@@ -278,7 +278,7 @@ class _HomePageState extends State<HomePage> {
                             color: enableButton ? white : Color(0xff7C8990),
                             fontSize: 33.28.sp),
                       ),
-                      elevation: 1,
+                      elevation: 0,
                       onPressed: () {
                         Navigator.push(
                             context,
