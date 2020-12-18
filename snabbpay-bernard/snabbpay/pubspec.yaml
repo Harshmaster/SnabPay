@@ -24,6 +24,8 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_screenutil: ^4.0.0
+  flutter_dropdown: ^0.0.8
+  
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -46,13 +48,33 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  assets: 
-    - assets/Login/Group 5582/0.75x/Group 5582.png
-    - assets/Login/Group 5582/Group 5582.png
-    - assets/Login/Group 5582/1.5x/Group 5582.png
-    - assets/Login/Group 5582/2.0x/Group 5582.png
-    - assets/Login/Group 5582/3.0x/Group 5582.png 
-    - assets/Login/Group 5582/4.0x/Group 5582.png
+  assets:
+    # LOGO
+    - assets/Login/logo/0.75x/Group 5582.png
+    - assets/Login/logo/Group 5582.png
+    - assets/Login/logo/1.5x/Group 5582.png
+    - assets/Login/logo/2.0x/Group 5582.png
+    - assets/Login/logo/3.0x/Group 5582.png 
+    - assets/Login/logo/4.0x/Group 5582.png
+    #FLAGS
+    ## CANADA
+    - assets/Login/flags/canada/canada.png
+    - assets/Login/flags/canada/0.75x/canada.png
+    - assets/Login/flags/canada/1.5x/canada.png
+    - assets/Login/flags/canada/2.0x/canada.png
+    - assets/Login/flags/canada/3.0x/canada.png
+    - assets/Login/flags/canada/4.0x/canada.png
+    ## NIGERIA
+    - assets/Login/flags/nigeria/nigiria.png
+    - assets/Login/flags/nigeria/0.75x/nigiria.png
+    - assets/Login/flags/nigeria/1.5x/nigiria.png
+    - assets/Login/flags/nigeria/2.0x/nigiria.png
+    - assets/Login/flags/nigeria/3.0x/nigiria.png
+    - assets/Login/flags/nigeria/4.0x/nigiria.png
+
+    ##ARROW DOWN AND UP
+    - assets/Login/arrow_down.png
+    - assets/Login/arrow_up.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
