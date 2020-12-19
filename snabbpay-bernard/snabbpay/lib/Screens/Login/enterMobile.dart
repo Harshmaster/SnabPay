@@ -23,7 +23,7 @@ class _EnterMobileState extends State<EnterMobile> {
       child: Container(
         height: _keyboardIsVisible()
             ? isArrowDown
-                ? 380.h
+                ? 400.h
                 : 590.h
             : 590.h,
         margin: EdgeInsets.only(left: 16.w, right: 16.w, top: 64.h),
@@ -40,7 +40,7 @@ class _EnterMobileState extends State<EnterMobile> {
                 ),
               ),
             ),
-            SizedBox(height: 50.h),
+            SizedBox(height: 40.h),
             Text(
               "Login or Create New Account",
               style: TextStyle(
@@ -58,7 +58,7 @@ class _EnterMobileState extends State<EnterMobile> {
                 fontWeight: FontWeight.w400,
               ),
             ),
-            SizedBox(height: 50.h),
+            SizedBox(height: 40.h),
             Container(
               child: TextField(
                 onChanged: (value) {
@@ -164,8 +164,8 @@ class _EnterMobileState extends State<EnterMobile> {
                       child: SingleChildScrollView(
                         child: Container(
                           width: 328.w,
-                          // height: 350.h, 
-                          height: 210.h, 
+                          // height: 350.h,
+                          height: 210.h,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(4.w),
                           ),
